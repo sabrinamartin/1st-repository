@@ -1,0 +1,63 @@
+package legalSentence;
+
+import java.util.Scanner;
+
+//s.substring(0,1).equals("~")
+//if (beginsWithNot(s)) return legal(cutNot(s))
+//int lhsIndex = findFirstOp(s)
+//int rhsIndex = findFirstOpPlusOneTwoOrThree(s)
+//int ffo(String s) {
+// 		s.indexOf("l")
+//return legal(lhs) && return legal(rhs)
+//legal: p, p|q, p&q, p|p&q, ~p|p&q, ~p|~p&q, ~~~~p
+//illegal:
+
+public class Main {
+	
+	public static void main (String[] args) {
+		String s = "~P~";
+		if (legal(s)) {
+			System.out.print("true");
+		} else {
+			System.out.print("false");
+		}
+//		System.out.print(cutNot("~BOB"));
+	}
+	
+	public static boolean simpleSentence (String s) {
+		if (s.equalsIgnoreCase("P") || s.equalsIgnoreCase("Q")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public static boolean beginsWithNot (String s) {
+		if (s.substring(0,1).equals("~")) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public static String cutNot(String s) {
+		return s.substring(1);
+	}
+	
+	public static boolean legal (String s) {
+		if (s.equals("")) {
+			return false;
+		} else if (simpleSentence(s)) {
+			return true;
+		} else if (beginsWithNot(s)) {
+			s = cutNot(s);
+			return legal(s);
+		} else if (s.indexOf("&") != -1) {
+			int index = s.indexOf("&");
+			return legal(s.substring(0, index)) && legal(s.substring(index+1));
+		} else {
+			return false;
+		}
+	}
+
+}

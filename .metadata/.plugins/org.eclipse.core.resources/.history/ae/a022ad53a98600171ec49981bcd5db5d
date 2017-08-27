@@ -1,0 +1,14 @@
+package legalSentence;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class MainTest {
+
+	@Test
+	public void test() {
+		assertEquals(true, Main.legal("~P&Q&~P"));
+	}
+
+}
