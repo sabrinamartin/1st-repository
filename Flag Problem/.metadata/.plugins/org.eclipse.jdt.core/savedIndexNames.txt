@@ -1,4 +1,0 @@
-INDEX VERSION 1.127+/Users/sabrinamartin/Documents/workspace/AP CS Eclipse/.metadata/.plugins/org.eclipse.jdt.core
-2455544059.index
-3576812656.index
-741763111.index

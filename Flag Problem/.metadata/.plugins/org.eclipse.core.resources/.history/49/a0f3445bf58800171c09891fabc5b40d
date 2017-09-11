@@ -1,9 +1,0 @@
-
-public class problems {
-	
-	//Problem 1
-	public int ret() {
-		return 17;
-	}
-
-}
