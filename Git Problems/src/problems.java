@@ -33,7 +33,13 @@ public class problems {
 	
 	//Problem 4
 	public int coins(int n) {
-		
+		int fives = 0;
+		int twos = 0;
+		if (n >= 5) {
+			fives += n/5;
+			n = n%5;
+			if ()
+		}
 	}
 
 }

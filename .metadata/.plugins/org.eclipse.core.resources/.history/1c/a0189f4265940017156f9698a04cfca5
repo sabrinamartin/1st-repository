@@ -1,0 +1,20 @@
+USA Flag Project README
+
+Introduction
+-----------------------------------
+This purpose of this java program is to display the American flag using
+built-in graphics libraries and math mostly compromised of trigonometry.
+
+Specifications
+-----------------------------------
+This program fulfills all of the requirements by successfully displaying the US 
+flag with all of the correct ratios for each of the elements. When the applet
+window is resized, the flag adjusts its proportions accordingly. The flag
+also has the most accurate colors possible because the correct hex color codes
+were used to replicate "Old Glory Red" and "Old Glory Blue".
+
+Errors
+-----------------------------------
+
+
+

@@ -1,0 +1,42 @@
+import java.applet.Applet;
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class Flag extends Applet {
+	
+	final Color OLD_GLORY_RED = new Color(0xB22234);
+	final Color OLD_GLORY_BLUE = new Color(0x3C3B6E);
+	
+	public void paint (Graphics g) {
+		
+		double height = getHeight();
+		double width = getWidth();
+		double a;
+		double b;
+		if (width > 1.9*height) {
+			a = height;
+			b = 1.9*a;
+		} else {
+			b = width;
+			a = width/1.9;
+		}
+		
+		setBackground(Color.BLACK);
+		g.setColor(Color.WHITE);
+		g.fillRect(0, 0, (int) b, (int) a);
+		
+		double l = a/13;
+		g.setColor(OLD_GLORY_RED);
+		paint_red_stripes(g, a, b, l);
+		
+
+	}
+	
+	public void paint_red_stripes(Graphics g, double a, double b, double l) {
+		g.setColor(OLD_GLORY_RED);
+		for (double y = 0; y < a; y+=2*l) {
+			g.fillRect(0, (int) y, (int) b, (int) l);
+		}
+	}
+
+}
