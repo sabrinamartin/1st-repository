@@ -1,0 +1,101 @@
+Hivolts Project README
+
+Introduction
+-----------------------------------------
+The purpose of this project is to rewrite the game called “Hivolts” 
+that was originally on a mainframe computer system called PLATO in the 1970s and 1980s. 
+
+Specifications
+-----------------------------------------
+This code fulfills all of the important characteristics of the game board. 
+It contains a 12 by 12 grid with 3 object types; 1 randomly-placed smiley 
+face, 12 randomly-placed Mhos that are stored in a list, electric fences 
+around the whole perimeter, and 20 randomly-placed electric fences on the 
+interior. Additionally, the game player has the ability to move 
+horizontally, vertically, diagonally, and to a random position in the 
+game board with the keys “a”, “s”, “d”, “q”, “w”, “e”, “z”, “x”, “c”, and 
+“j”. This is due to the implementation of a KeyListener. 3 things may happen 
+when the player moves adjacently. The player might land on an electric fence 
+and lose, they might land on a Mho and lose, or they might simply land on an 
+empty square. When the player move “jumps” to a random position, they are 
+guaranteed not to land on a fence but they might land on a Mho and lose 
+or land on an empty space and live. In the meantime, the Mhos move closer 
+to the player after each turn. Once the game ends, it communicates to the 
+user if they won or lost and asks the user if they would like to play again. 
+The game has been recreated with more modern graphics and it also keeps 
+score of how many turns the player has used.
+
+Errors
+-----------------------------------------
+Although this is not an error that prevents the game from being played, 
+it is still something that could be improved upon. The code is  
+redundant and inefficient. Were I to rewrite the program, I would get 
+rid of extra variables or parameters that do not serve a purpose. I 
+would keep the code “DRY” (Don’t Repeat Yourself).
+
+Overview of Code
+-----------------------------------------
+The program contains a total of five classes; Mho, SmileyFace, Main,
+ GameGrid, and Fence. The GameGrid is an extension of the built-in 
+ JFrame class. The organization of the objects is through a [12][12] 
+ array. Each element in the array is a letter for the given game object. 
+ For example, a Fence object would be “F” in the array. Each object 
+ in the game window is dependent on what letter is in that index of 
+ the array. The initial game setup has 12 randomly placed Mhos, 1 
+ SmileyFace, and 20 interior Fences. To move the player (SmileyFace) 
+ around, the KeyListener method in the GameGrid class takes input from 
+ the user. The game score increases by 1 each time an accepted key -- 
+ “q”, “w”, “e”, “a”, “s”, “d”, “z”, “x”, “c”, “j”, or “p”) -- is pressed
+ and as long as the boolean alive is true, the program will check if the
+ SmileyFace will die if they move to that new position (done by the 
+ MoveOrDie() method). If MoveOrDie() returns alive as false because 
+ the index the SmileyFace would move to is already occupied by a Fence 
+ or Mho, then the game ends. On the other hand, if MoveOrDie() returns 
+ alive as true, then that new index’s letter is changed to “S” for 
+ SmileyFace and the old index becomes an “x” to represent an empty space. 
+ Each time the SmileyFace moves position, so do the Mhos. This is 
+ controlled by the mhosMove() method. Through a series of conditionals
+ in a for loop, it compares the horizontal and vertical location of 
+ each Mho relative to the SmileyFace, and creates a new index for each
+ Mho in an attempt to “get closer” to the SmileyFace. But if that new 
+ index is the current index of an “F”, or Fence, then the Mho dies. 
+ This is represented by moving the Mho off the game board and to the 
+ corner at [0][0]. As stated before, the game ends when the boolean alive 
+ is false, but it can also end if all of the Mhos are “dead” (when there 
+ exists not a single Mho in the [12][12] array except for in [0][0]. This 
+ is represented with the boolean allMhoDead. If this evaluates as true, 
+ then the game ends and the player is offered the option to play again. 
+ If they press “p”, then the game resets. This includes setting alive back 
+ to true, randomly setting the locations of the Mhos, SmileyFace, and 
+ Fences, and setting the game score back to zero.
+
+Major Challenges
+-----------------------------------------
+The first major challenge we faced was setting up the game board. 
+While this is seemingly easy, we did not know whether or not to use 
+a Canvas, JPanel, or JFrame. It took us a bit of time to differentiate 
+these various methods of making a visual game board. Another difficult 
+aspect of the project was the repaint method. There were times where the 
+game board was not updating its appearance and this was due to the 
+placement on the repaint method. Overall, understanding and implementing the 
+game concept was not the hardest part, such as moving the Mhos, it was 
+organizing the different classes and small details to make the code run 
+smoothly.
+
+Acknowledgments
+-----------------------------------------
+I must give a huge thanks to my fellow group members, Zage Strassberg-Phillips 
+and Ria Vora, for helping in the completion of this project. Overall, we 
+did about the same amount of work and most of the time we were huddled 
+around one computer, sharing advice and ideas on how to tackle the various 
+challenges we faced. But if we were to completely break down the roles of 
+each member, Ria was mostly in charge of Graphics, instantiating the board, 
+the SmileyFace moves, and organization of code. Zage handled the MhosMove method, 
+creating the Fences, instantiating the Mhos, and Mho Death. Lastly, I lead 
+the KeyListener method, the gameOver() and youWon() methods, and the game 
+rest methods. Each of us put in our full effort and completed each part. 
+As always, we depended on the official Java Docs to make sure we were writing 
+methods such as KeyListener() correctly. Also, we referred to StackOverflow 
+many times to find advice on how to set up the game with the JFrames or to 
+figure out why our repaint() method was not executing properly -just to 
+name a couple times of usage.
