@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Extract method &apos;public void moveOrDie()&apos; from &apos;hivolts.GameGrid.init().new KeyListener() {...}.keyPressed()&apos; to &apos;hivolts.GameGrid.init().new KeyListener() {...}&apos;&#x0A;- Original project: &apos;Hivolts 2&apos;&#x0A;- Method name: &apos;moveOrDie&apos;&#x0A;- Destination type: &apos;hivolts.GameGrid.init().new KeyListener() {...}&apos;&#x0A;- Declared visibility: &apos;public&apos;" comments="false" description="Extract method &apos;moveOrDie&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src&lt;hivolts{GameGrid.java" name="moveOrDie" replace="false" selection="1501 112" stamp="1507781310523" version="1.0" visibility="1"/>
-</session>

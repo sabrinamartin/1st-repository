@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;Fifteen_One.java&apos; to &apos;Chapter 15 Exercises&apos;&#x0A;- Original project: &apos;Hivolts 2&apos;&#x0A;- Destination element: &apos;Chapter 15 Exercises&apos;&#x0A;- Original element: &apos;hivolts.Fifteen_One.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=Chapter 15 Exercises" element1="/src&lt;hivolts{Fifteen_One.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1508713093801" units="1" version="1.0"/>
-</session>
