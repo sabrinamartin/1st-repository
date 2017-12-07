@@ -1,4 +1,4 @@
-//This program takes a set of addresses in the txt file and 
+//This program takes a set of addresses in the txt file and prints them out until it finds an error
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

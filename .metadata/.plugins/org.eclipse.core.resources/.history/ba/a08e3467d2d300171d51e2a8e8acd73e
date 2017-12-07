@@ -1,0 +1,22 @@
+
+public class sorts {
+	
+	public static void main(String[] args) {
+		System.out.print(bubbleSort([]));
+	}
+	
+	public static int[] bubbleSort(int[] a) {
+		for (int n = a.length-1; n > 1; n--) {
+			for (int i = 0; i < n; i++) {
+				int temp = 0;
+				if (a[i] > a[i+1]) {
+					temp = a[i];
+					a[i] = a[i+1];
+					a[i+1] = temp;
+				}
+			}
+		}
+		return a;
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Vocab 11 Project/Addresses&apos; to &apos;Addresses.txt&apos;" description="Rename resource &apos;Addresses&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Addresses" name="Addresses.txt" stamp="1510807080957" updateReferences="true"/>
+</session>
