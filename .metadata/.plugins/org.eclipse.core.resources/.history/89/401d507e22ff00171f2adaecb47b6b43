@@ -1,0 +1,24 @@
+
+public class StandardDeviation2 {
+
+	public static double sDev(double[] data) {
+		double mean = mean(data);
+		return mean;
+	}
+	
+	//the mean of all the numbers
+		public static double mean(double[] data) {
+			double mean = 0;
+			for (double e:data) {
+				mean += e;
+			}
+			mean /= data.length;
+			return mean;
+		}
+	
+	public static void main(String[] args) {
+		double[] data = {3, 5, 6, 7, 8, 13};
+		System.out.println(sDev(data));
+	}
+	
+}

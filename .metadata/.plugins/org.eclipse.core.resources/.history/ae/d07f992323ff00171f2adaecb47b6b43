@@ -1,0 +1,38 @@
+
+public class StandardDeviation2 {
+
+	public static double[] sDev(double[] data) {
+		double mean = mean(data);
+		double[] sqDiff = sqDiff(data, mean);
+		return sqDiff;
+	}
+	
+	//the mean of all the numbers
+	public static double mean(double[] data) {
+		double mean = 0;
+		for (double e:data) {
+			mean += e;
+		}
+		mean /= data.length;
+		return mean;
+	}
+		
+	//subtract mean and square result from each
+	public static double[] sqDiff(double[] data, double mean) {
+		double[] sqDiff = {data.length};
+		for (int i = 0; i < data.length; i++) {
+			double a = data[i] - mean;
+			sqDiff[i] = Math.pow(a, 2);
+		}
+		return sqDiff;
+	}
+	
+	public static void main(String[] args) {
+		double[] data = {3, 5, 6, 7, 8, 13};
+//		System.out.println(sDev(data));
+		for (double e:sDev(data)) {
+			System.out.println(e);
+		}
+	}
+	
+}

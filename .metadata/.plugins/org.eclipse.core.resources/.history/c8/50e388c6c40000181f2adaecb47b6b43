@@ -1,0 +1,37 @@
+import java.lang.Math;
+
+public class LHopitals {
+	
+	public static boolean enforce(double limf, double limg) {
+		if (limf == 0 && limg == 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public static double limf() {
+		return Math.round(0.001);
+	}
+	
+	public static double limg(){
+		return Math.round(Math.pow(2.71, 0.001*2)-1);
+	}
+	
+	public static void main (String[] args) {
+		//if limit f(x) == 0 && limit g(x) == 0 --> must use rule
+		//if 
+		System.out.println("Given: f(x) = x");
+		System.out.println("       g(x) = (e^2x)-1");
+		System.out.println("Do we enforce L'Hospital's rule to evaluate the limit of f(x)/g(x) as x --> 0?");
+		double limf = limf();
+		double limg = limg();
+		if (enforce(limf, limg) == true) {
+			System.out.print("YES because the numerator and denominator have the limit 0 and f(x)/g(x) takes the indeterminate form of 0/0 ");
+		} else {
+			System.out.print("No");
+		}
+		
+	}
+
+}

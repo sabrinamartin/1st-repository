@@ -1,0 +1,13 @@
+
+public class LHopitals {
+	
+	public static void main (String[] args) {
+		//if limit f(x) == 0 && limit g(x) == 0 --> must use rule
+		//if 
+		System.out.println("Given: f(x) = x");
+		System.out.println("       g(x) = (e^2x)-1");
+		System.out.println("Do we enforce L'Hospital's rule to evaluate the limit of f(x)/g(x) as x --> 0?");
+		
+	}
+
+}

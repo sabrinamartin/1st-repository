@@ -1,0 +1,34 @@
+import java.util.HashSet;
+import java.util.Set;
+
+public class SetDifference {
+	
+	public static String toString(int[] set) {
+		String nums = "";
+		for (int i = 0; i < set.length; i++) {
+			if (i < set.length-1) {
+				nums += set[i] + ", ";
+			} else {
+				nums += set[i];
+			}
+			
+		}
+		return "{ " + nums + " }";
+	}
+	
+	public static void main(String[] args) {
+		Set<Integer> aS = new HashSet<Integer>();
+		int[] aI = {1, 2, 3, 6, 8, 5, 9};
+		for (int e:aI) {
+			aS.add(e);
+		}
+		Set<Integer> bS = new HashSet<Integer>();
+		int[] bI = {1, 4, 3, 0, 8, 7};
+		for (int e:bI) {
+			bS.add(e);
+		}
+		System.out.println("Set A: " + toString(aI));
+		System.out.println("Set B: " + toString(bI));
+	}
+
+}

@@ -1,0 +1,14 @@
+
+public class Binding {
+	
+	public static void main(String[] args) {
+		String song = "what";
+		song("hello");
+		System.out.print(song);
+		
+	}
+
+	public static void song(String name) {
+		String song = "hello";
+	}
+}

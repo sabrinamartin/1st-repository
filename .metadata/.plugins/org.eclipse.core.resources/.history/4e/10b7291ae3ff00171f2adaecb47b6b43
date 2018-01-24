@@ -1,0 +1,22 @@
+import java.lang.Math;
+
+public class Limit {
+	
+	public static double f(double x) {
+		double retval = 0;
+		retval = (Math.pow(x, 2) - 1)/(x - 1);
+		return retval;
+	}
+	
+	public static void main (String[] args) {
+		System.out.println("Take the function f(x) = ((x^2) - 1)/(x - 1)");
+		System.out.println("f(0.5) = " + f(0.5));
+		System.out.println("f(0.7) = " + f(0.7));
+		System.out.println("f(0.9) = " + f(0.9));
+		System.out.println("f(0.99) = " + f(0.99));
+		System.out.println("f(0.999) = " + f(0.999));
+		System.out.println("f(0.9999) = " + f(0.9999));
+		System.out.println("f(0.99999) = " + f(0.99999));
+	}
+
+}

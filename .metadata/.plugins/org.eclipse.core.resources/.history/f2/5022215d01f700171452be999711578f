@@ -1,0 +1,16 @@
+
+public class LogicalSentence {
+	
+	private boolean[] truthValues;
+	
+	public static boolean matches(String sentence1, String sentence2){
+		return sentence1.equals(sentence2);
+	}
+
+	public static void main (String[] args) {
+		String ex1 = "A~~K|L";
+		String ex2 = "B&K~~";
+		System.out.println(matches(ex1, "A~~K|L"));
+		System.out.print(matches(ex1, "B&K~~"));
+	}
+}

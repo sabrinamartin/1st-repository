@@ -1,25 +1,35 @@
 
 public class Main {
 	
-	Bird canary = new Bird("yellow");
+	Pigeon fluffy = new Pigeon();
+	Animal charlie = new Animal();
+	fluffy.fly(4);
 
 }
 
-class Bird {
-	
-	private String color;
-
-	public Bird(String color) {
-		this.color = color;
-	}
-	
-	public String getColor(){
-		return color;
-	}
-
-	public void setColor(String color) {
-		this.color = color;
-	}
+class Animal {
 	
 
+}
+
+class Pigeon extends Animal implements FlyingBirdRequirements {
+	
+	int height = 0; 
+	int ruffles = 3;
+	
+	public void fly(int newHeight) {
+		height += newHeight;
+	}
+	
+	public void ruffles(int moreRuffles) {
+		ruffles += moreRuffles;
+	}
+	
+}
+
+interface FlyingBirdRequirements {
+	
+	public void fly(int height);
+	public void ruffles(int moreRuffles);
+	
 }

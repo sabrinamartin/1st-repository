@@ -1,0 +1,38 @@
+import java.util.Set;
+import java.util.HashSet;
+
+
+public class UnionIntersectionDifference {
+	
+	public Set<Integer> setUnion(Set<Integer> a, Set<Integer> b) {
+		Set<Integer> union = new HashSet<Integer>();
+		for (int e:a) {
+			union.add(e);
+		}
+		for (int e:b) {
+			union.add(e);
+		}
+		return union;
+	}
+	
+	public Set<Integer> setIntersection(Set<Integer> a, Set<Integer> b) {
+		Set<Integer> intersection = new HashSet<Integer>();
+		for (int e:a) {
+			if (b.contains(e)) {
+				intersection.add(e);
+			}
+		}
+		return intersection;
+	}
+	
+	public Set<Integer> setDifference(Set<Integer> a, Set<Integer> b) {
+		Set<Integer> difference = new HashSet<Integer>();
+		for (int e:a) {
+			if (b.contains(e) == false) {
+				difference.add(e);
+			}
+		}
+		return difference;
+	}
+
+}

@@ -1,0 +1,27 @@
+
+public class BinomialCoefficient {
+	
+	public static long nCk(long n, long k) {
+		
+		long nf = n; 
+		for (long i = 1; i < n; i++) {
+			nf *= (n-i);
+		}
+		long kf = k;
+		for (long j = 1; j < k; j++) {
+			kf *= (k-j);
+		}
+		long diff = n-k;
+		long nkf = n-k;
+		for (long e = 1; e < diff; e++) {
+			nkf *= (diff-e);
+		}
+		return nf/(kf*nkf);
+	}
+	
+	public static void main (String[] args) {
+		System.out.println("5C2 is " + nCk(5, 2));
+		System.out.println("60C9 is " + nCk(3, 1));
+	}
+
+}

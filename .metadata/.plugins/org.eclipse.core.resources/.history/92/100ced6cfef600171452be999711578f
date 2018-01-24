@@ -1,0 +1,25 @@
+
+public class LogicalSentence {
+	
+	private boolean[] truthValues;
+	
+	public static boolean matches(String sentence1, String sentence2){
+//		if (sentence1.length() != sentence2.length()) {
+//			return false;
+//		} else {
+//			for (int i = 0; i < sentence1.length(); i++) {
+//				if (sentence1.charAt(i).equals(sentence2.charAt(i))) {
+//					return false;
+//				} else {
+//					return true;
+//				}
+//			}
+//		}
+		return sentence1.equals(sentence2);
+	}
+
+public static void main (String[] args) {
+	String ex1 = "A~~K|L";
+	System.out.print(matches(ex1, "A~~K|L"));
+}
+}

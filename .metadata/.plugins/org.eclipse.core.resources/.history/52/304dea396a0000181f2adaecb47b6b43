@@ -1,0 +1,31 @@
+
+public class BinomialCoefficient {
+	
+	public static long nCk(long n, long k) {
+//		int nCk = 1;
+//		for (int i = 0; i <= k; i++) {
+//			nCk = nCk * (n-i) / (i+1);
+//		}
+//		return nCk;
+		long nf = n; 
+		for (long i = 1; i < n; i++) {
+			nf *= (n-1);
+		}
+		long kf = k;
+		for (long j = 1; j < k; j++) {
+			kf *= (k-j);
+		}
+		long diff = n-k;
+		long nkf = n-k;
+		for (long e = 1; e < diff; e++) {
+			nkf *= (diff-e);
+		}
+		System.out.println(kf);
+		return 0;
+	}
+	
+	public static void main (String[] args) {
+		System.out.println(nCk(1000, 2));
+	}
+
+}

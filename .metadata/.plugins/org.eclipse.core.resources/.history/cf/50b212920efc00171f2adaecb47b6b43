@@ -1,0 +1,16 @@
+
+public class BinomialCoefficient {
+	
+	public static long nCk(int k, int n) {
+		int nCk = 1;
+		for (int i = 0; i <= k; i++) {
+			nCk = nCk * (n-i) / (i+1);
+		}
+		return nCk;
+	}
+	
+	public static void main (String[] args) {
+		System.out.println(nCk(4, 8));
+	}
+
+}
