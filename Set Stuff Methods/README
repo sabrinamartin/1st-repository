@@ -1,1 +1,34 @@
 Set Stuff Methods README
+
+Introduction
+--------------------------------------
+The purpose of this java project is to implement various methods (created in the setStuff
+Coding Bat) in a new class. It also serves as practice for creating good documentation.
+
+Specifications
+--------------------------------------
+The class successfully implements all of the 11 setStuff methods. The class is well organized,
+with each method in corresponding order to the demonstration of itself in the main method. Each method
+is clearly explained with block comments.
+
+Errors
+--------------------------------------
+There are no notable errors.
+
+Overview of Code
+--------------------------------------
+This project contains just one class, SetStuff. In SetStuff, there are 11 methods from Coding Bat and one
+main method. Each of the 11 methods are concise and do not repeat themselves. They are written to compile as
+efficiently as possible. In the main method, each method is printed out with an example of a given input and return
+value.
+
+Major Challenges
+--------------------------------------
+Creating the class itself did not prove to be very challenging whereas writing some of the methods on Coding Bat
+was difficult. For me, writing nearestUnvisitedNode took the longest because there were many loops I had to keep
+track of and some small errors in numbers would prevent the method from functioning.
+
+Acknowledgments
+--------------------------------------
+I would like to acknowledge tutorialspoint.com and Stack Overflow for certain articles that informed me of the various
+JavaDoc tags that I can use to make my documentation as helpful and readable as possible.
