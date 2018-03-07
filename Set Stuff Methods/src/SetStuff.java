@@ -2,17 +2,33 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class SetStuff {
+
 	
+	/**
+	 * Method #1: Creates an ArrayList<Integer> that contains 17 
+	 * @return ArrayList<Integer> with one element, 17
+	 */
 	public static ArrayList<Integer> ret17() {
 		  ArrayList<Integer> retval = new ArrayList<Integer>();
 		  retval.add(17);
 		  return retval;
 	}
 	
+	/**
+	 * Method #2: Take an ArrayList<Integer> and returns its zeroth element
+	 * @param al An ArrayList of integers
+	 * @return The element at index 0 of al
+	 */
 	public static Integer zerothElement(ArrayList<Integer> al){
 		  return al.get(0);
 	}
 	
+	/**
+	 * Method #3: Determines if the array contains the argument
+	 * @param a An integer
+	 * @param ar An array of integers
+	 * @return Boolean true if ar includes a, else it will return false
+	 */
 	public static boolean contains(int a, int[] ar){
 		  boolean retval = false;
 		  for (int i = 0; i<ar.length; i++) {
@@ -23,6 +39,51 @@ public class SetStuff {
 		  return retval;
 	}
 	
+	/**
+	 * Method #4: Determines if any element of one array is in the second
+	 * @param a The 1st array of integers
+	 * @param b The 2nd array of integers
+	 * @return Boolean true if b contains any elements in a, else it will return false
+	 */
+	public static boolean anyContains(int[] a, int[] b){
+		  for (int i = 0; i < a.length; i++) {
+		    for (int j = 0; j < b.length; j++) {
+		      if (a[i] == b[j]) {
+		        return true;
+		      }
+		    }
+		  }
+		  return false;
+	}
+	
+	/**
+	 * Method #5: Find the union of the elements in two arrays
+	 * @param a Array of integers
+	 * @param b Array of integers
+	 * @return A new array of integers containing all of the elements from a and b
+	 */
+	public static int[] union(int[] a, int[] b){
+		  int length = a.length + b.length;
+		  int [] retval = new int[length];
+		  int index = 0;
+		  for (int i = index; i < a.length; i++) {
+		    retval[i] = a[i];
+		    index += 1;
+		  }
+		  for (int j = 0; j<b.length; j++) {
+		    retval[index] = b[j];
+		    index += 1;
+		  }
+		  return retval;
+	}
+	
+	/** 
+	 * Method #6: Determines the intersection of the elements in two arrays
+	 * @param a An array of integers, already sorted from lowest to highest
+	 * @param b An array of integers, already sorted from lowest to highest
+	 * @return An array of integers containing any coinciding integers from a and b. 
+	 * 		   It is sorted and does not have any repeat values.
+	 */
 	public static int[] intersect(int[] a, int[] b){
 		  int size = 0;
 		  for (int i = 0; i < a.length; i++) {
@@ -53,32 +114,14 @@ public class SetStuff {
 		  return retval;
 	}
 	
-	public static boolean anyContains(int[] a, int[] b){
-		  for (int i = 0; i < a.length; i++) {
-		    for (int j = 0; j < b.length; j++) {
-		      if (a[i] == b[j]) {
-		        return true;
-		      }
-		    }
-		  }
-		  return false;
-	}
-	
-	public static int[] union(int[] a, int[] b){
-		  int length = a.length + b.length;
-		  int [] retval = new int[length];
-		  int index = 0;
-		  for (int i = index; i < a.length; i++) {
-		    retval[i] = a[i];
-		    index += 1;
-		  }
-		  for (int j = 0; j<b.length; j++) {
-		    retval[index] = b[j];
-		    index += 1;
-		  }
-		  return retval;
-	}
-	
+	/**
+	 * Method #7: Finds the String at the index of the smallest integer for which the corresponding boolean is false
+	 * @param visited An array of booleans
+	 * @param distance An array of integers
+	 * @param nodeName An array of Strings
+	 * @return Returns a String from nodeName whose index is the same as the smallest integer in distance for
+	 * 		   which the corresponding boolean in visited is false
+	 */
 	public static String nearestUnvisitedNode(boolean[] visited, int[] distance, String[] nodeName){
 		  //counts number of falses
 		  int num_false = 0;
@@ -115,6 +158,13 @@ public class SetStuff {
 		  }
 	}
 	
+	/** 
+	 * Method #8: Creates an ArrayList with the given integers
+	 * @param a Integer
+	 * @param b Integer
+	 * @param c Integer
+	 * @return An new ArrayList<Integer> that contains a, b, and c
+	 */
 	public static ArrayList<Integer> listify(int a, int b, int c){
 		  ArrayList<Integer> retval = new ArrayList<Integer>();
 		  retval.add(a);
@@ -123,6 +173,15 @@ public class SetStuff {
 		  return retval;
 	}
 	
+	/**
+	 * Method #9: Makes an ArrayList of given objects and adds that to a given ArrayList of an ArrayList of objects
+	 * @param graph An ArrayList<ArrayList<Object>> which will receive more additions
+	 * @param a An integer
+	 * @param b An integer
+	 * @param c An integer
+	 * @return An ArrayList<ArrayList<Object>> that will contain the previous elements from graph as well
+	 * 		   as a new ArrayList<Object> that contains a, b, and c
+	 */
 	public static ArrayList<ArrayList<Object>> addEdge(ArrayList<ArrayList<Object>> graph, int a, int b, int c){
 		  ArrayList<Object> addOn = new ArrayList<Object>();
 		  addOn.add(a);
@@ -132,6 +191,13 @@ public class SetStuff {
 		  return graph;
 	}
 	
+	/**
+	 * Method #10: Makes a new ArrayList that contains all of the elements that are in the first two indices of 
+	 * 			   each ArrayList
+	 * @param edgelist An ArrayList<ArrayList<Integer>>
+	 * @return An ArrayList<Integer> that contains the union of all the integers that appear in the first 
+	 * 		   two elements of each ArrayList in edgeList of size three
+	 */
 	public static ArrayList<Integer> collectNodes(ArrayList<ArrayList<Integer>> edgelist){
 		  ArrayList<Integer> retval = new ArrayList<Integer>();
 		  for (int i = 0; i < edgelist.size(); i++){
@@ -144,6 +210,13 @@ public class SetStuff {
 		  return retval;
 	}
 	
+	/**
+	 * Method #11: Creates a new ArrayList that contains either maximal values or 0
+	 * @param n Integer that specifies the size of the returned ArrayList
+	 * @param start Specifies the index of the ArrayList that will not be a maximal value, it will be 0
+	 * @return An ArrayList<Integer> of size n whose values are maximal except at the index of the start, 
+	 * 		   where the value will be 0
+	 */
 	public static ArrayList<Integer> setInfinity(int n, int start){
 		  ArrayList<Integer> retval = new ArrayList<Integer>();
 		  for (int i = 0; i < n; i++) {
@@ -157,7 +230,6 @@ public class SetStuff {
 	}
 
 
-	
 	public static void main (String[] args) {
 		//Method #1
 		System.out.println("Method #1: ret17()");
