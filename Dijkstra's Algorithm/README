@@ -1,0 +1,85 @@
+Dijkstra's Algorithm READ ME
+
+Introduction
+-----------------------------------------
+In this assignment, I had to write Dijkstra's search Algorithm to find the shortest 
+path to all the nodes in a graph from a given starting node.
+
+Specifications
+-----------------------------------------
+The code successfully creates an object of type Graph with an ArrayList of ArrayLists
+of an ArrayList of integers based off of an Integer[][][]. It also has a Node class
+whose constructor takes an integer identifier. The project includes additional methods
+needed to make the algorithm functional.
+
+
+Errors
+-----------------------------------------
+First, I did not include a method called getPreviousList() which
+is supposed to return an ArrayList of Nodes. Instead, I represented these Nodes
+through a simple array. Also, I returned an Array of shortest distances from the 
+source node to each node. The first element in the array returns as infinity, which
+it should not be. I am not sure how to fix this or how I caused this to happen.
+
+Overview of Code
+-----------------------------------------
+This project contains 4 classes: Dijkstra, Edge, Graph, and Node. 
+
+The Node class has a constructor with its name, stored as an integer and an 
+ArrayList of Edges to represent the given Node's neighbors. An important method
+in the Node class is addNeighbor(). The argument takes a the Node that represents
+the neighbor as well as an integer that represents the distance between the Node
+and its new neighbor. This allows the Nodes to become "connected".
+
+The Edge class is simple and only has two instance variables. An integer to 
+represent the distance between itself and the destination Node.
+
+The Graph class is the most complex. It has three instance variables: an
+ArrayList<Node> with all of the nodes in the graph, an array of integers with 
+the shortest distances to each node from the source node (distance), and lastly 
+an array of Nodes to represent the previous and already visited nodes. The 
+constructor takes a triple ArrayList of integers and creates an ArrayList of Nodes. 
+Graph also contains the Dijkstra method. The argument takes a source node. First 
+it initiates the distance array and sets it to the same size as the nodes ArrayList. 
+Then it sets all the unknown distances to infinity. Next I used a PriorityQueue and 
+Comparator to compare the nodes' distances to the source node. This would organize 
+the nodes in the ArrayList based on the closest to farthest distance to the source 
+node. The last step is to remove the each at the top of the priority queue and 
+check the edges of its neighbors. An "alt" variable was created to store the sum of 
+distance of the node at the top of the queue to the source and the distance of the 
+given Edge to its destination node. If alt is shorter than the previously saved distance
+to the destination node, then that shorter distance is updated in the distance array.
+Also, that node becomes marked as visited in the previous array. Finally, the 
+destination node of edge e is removed from removed and added again. This re-prioritizes
+the queue and maintains the correct order.
+
+The Dijkstra class contains the main method which converts a Integer[][][] to a triple
+ArrayList to represent the node data. It also calls the Dijkstra algorithm and prints 
+out the array of distances for our Graph object.
+
+Major Challenges
+-----------------------------------------
+This assignment was very difficult for me to complete because it took me a long time
+to conceptualize the algorithm. A significant part of my process was to come up
+with how I was going to organize the various objects and connect them to each
+other. In terms of writing the program I really struggled with determining how to 
+check back to see if there was a shorter path to a node. Although I was able to 
+complete the algorithm, I still got myself confused all through out the assignment.
+It is very complex and it's hard to retain all of the details regarding how
+the code works together, since I pieced it together very slowly.
+
+Acknowledgments
+-----------------------------------------
+I could not have completed it without the many online resources.
+The basis of my code was based of the pseudocode found on Wikipedia.
+   --> https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Pseudocode
+I read about the algorithm many many times on various websites.
+   --> https://www.hackerearth.com/practice/notes/dijkstras-algorithm/
+   --> https://medium.com/basecs/finding-the-shortest-path-with-a-little-help-from-dijkstra-613149fbdc8e
+I learned gained a better understanding of comparators with these links:
+   --> https://www.geeksforgeeks.org/comparator-interface-java/
+   --> https://www.javatpoint.com/Comparator-interface-in-collection-framework
+   --> https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html
+I used methods from the priority queue class found here:
+   --> https://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html
+https://www.geeksforgeeks.org/comparator-interface-java/
